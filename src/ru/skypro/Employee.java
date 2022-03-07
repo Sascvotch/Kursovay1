@@ -3,12 +3,12 @@ package ru.skypro;
 import java.util.Objects;
 
 public class Employee {
-   static int id;
-    String name;
-    String lastName;
-    String middleName;
-    String department;
-    double salary;
+    private static int id;
+    private String name;
+    private String lastName;
+    private String  middleName;
+    private String department;
+    private double salary;
 
     public Employee( String name, String lastName, String middleName, String department, double salary) {
         id = id++;
@@ -17,31 +17,6 @@ public class Employee {
         this.middleName = middleName;
         this.department = department;
         this.salary = salary;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return Objects.equals(id, employee.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id='" + id + '\'' +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", middleName='" + middleName + '\'' +
-                ", department='" + department + '\'' +
-                ", salary=" + salary +
-                '}';
     }
 
     public int getId() {
@@ -55,7 +30,7 @@ public class Employee {
     public void setName(String name) {
         this.name = name;
     }
-   public String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
@@ -86,4 +61,29 @@ public class Employee {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Objects.equals(id, employee.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", middleName='" + middleName + '\'' +
+                ", department='" + department + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
+
 }

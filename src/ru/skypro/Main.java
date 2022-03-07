@@ -22,22 +22,33 @@ public class Main {
         maxSalary(employee);
         minSalary(employee);
         System.out.println("Средняя зарплата: " +averageSalary(employee));
-        employeeFIO(employee);
-    }
-
- public static void printAllEmployee(Employee [] employee) {
-        System.out.println(Arrays.toString(employee));
-
-    }
-    public static void employeeFIO(Employee [] employee) {
-        for (int i=0; i<10;i++) {
-            System.out.println(employee[i].getLastName() + " " +employee[i].getName() + " " +employee[i].getMiddleName() );
+        //employeeFIO(employee);
+        for (int i=0; i< employee.length;i++) {
+            getFullName(employee, i);
         }
     }
 
+    private static void getFullName(Employee [] employee, int i) {
+        String fullName = employee[i].getLastName() + " " +employee[i].getName() + " " +employee[i].getMiddleName();
+        System.out.println(fullName) ;
+    }
+
+    public static void printAllEmployee(Employee [] employee) {
+        System.out.println(Arrays.toString(employee));
+
+    }
+   // public static void employeeFIO(Employee [] employee) {
+   //     for (int i=0; i< employee.length;i++) {
+    //        getFullName(employee[i]);
+    //    }
+   // }
+
+
+
+
    public static double allSalary(Employee [] employee) {
           double allSalary = 0;
-          for (int i = 0; i < 10; i++) {
+          for (int i = 0; i < employee.length; i++) {
                allSalary +=employee[i].getSalary();
           }
           return allSalary;
