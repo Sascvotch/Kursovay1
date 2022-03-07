@@ -22,7 +22,7 @@ public class Main {
         maxSalary(employee);
         minSalary(employee);
         System.out.println("Средняя зарплата: " +averageSalary(employee));
-        //employeeFIO(employee);
+
         for (int i=0; i< employee.length;i++) {
             getFullName(employee, i);
         }
@@ -37,14 +37,6 @@ public class Main {
         System.out.println(Arrays.toString(employee));
 
     }
-   // public static void employeeFIO(Employee [] employee) {
-   //     for (int i=0; i< employee.length;i++) {
-    //        getFullName(employee[i]);
-    //    }
-   // }
-
-
-
 
    public static double allSalary(Employee [] employee) {
           double allSalary = 0;
