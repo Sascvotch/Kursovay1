@@ -7,15 +7,15 @@ public class Employee {
     private String name;
     private String lastName;
     private String  middleName;
-    private String department;
+    private int numberDepartment;
     private double salary;
 
-    public Employee( String name, String lastName, String middleName, String department, double salary) {
+    public Employee( String name, String lastName, String middleName, int numberDepartment, double salary) {
         id = id++;
         this.name = name;
         this.lastName = lastName;
         this.middleName = middleName;
-        this.department = department;
+        this.numberDepartment = numberDepartment;
         this.salary = salary;
     }
 
@@ -46,12 +46,12 @@ public class Employee {
         this.middleName = middleName;
     }
 
-    public String getDepartment() {
-        return department;
+    public int getNumberDepartment() {
+        return numberDepartment;
     }
 
-    public void setDepartment(String department) {
-        this.department = department;
+    public void setNumberDepartment(int numberDepartment) {
+        this.numberDepartment = numberDepartment;
     }
 
     public double getSalary() {
@@ -81,9 +81,13 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", middleName='" + middleName + '\'' +
-                ", department='" + department + '\'' +
+                ", numberDepartment='" + numberDepartment + '\'' +
                 ", salary=" + salary +
                 '}';
     }
+    public String toStringFullName() {
+        String fullNAme = lastName + " " + name + " " + middleName;
+        return fullNAme ;
 
+    }
 }
